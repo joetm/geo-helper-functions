@@ -11,8 +11,8 @@ require_once __PATH . "/db_connect.php";
 
 
 	$sql = "SELECT DISTINCT wposts.ID AS ID, postmeta.meta_value AS url
-FROM ".DBPREFIX."`posts` AS wposts
-JOIN ".DBPREFIX."`postmeta` AS postmeta ON (wposts.ID = postmeta.post_id)
+FROM `".DBPREFIX."posts` AS wposts
+JOIN `".DBPREFIX."postmeta` AS postmeta ON (wposts.ID = postmeta.post_id)
 WHERE wposts.post_type = 'post'
 
 AND postmeta.meta_key = 'url'
