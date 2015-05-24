@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(E_ALL | E_NOTICE | E_STRICT);
+//error_reporting(E_ALL | E_NOTICE | E_STRICT);
 //error_reporting(0);
 
 
@@ -167,7 +167,7 @@ function callback(StreetViewPanoramaData, StreetViewStatus) {
 			//save the data, using the panoid as key to identify the post
 			$.ajax({
 			  type: "POST",
-			  url: FULLURL."/data/extract_date.php",
+			  url: "<?php echo FULLURL ?>/data/extract_date.php",
 			  data: { 'postid': postid, 'year': year, 'month': month },
 			  success: function(msg) {
 				console.log( msg );
@@ -185,7 +185,7 @@ function callback(StreetViewPanoramaData, StreetViewStatus) {
 		//mark this post as parse to not query it again
 		$.ajax({
 		  type: "POST",
-		  url: FULLURL."/data/extract_date.php",
+		  url: "<?php echo FULLURL ?>/data/extract_date.php",
 		  data: { 'postid': postid, 'error': 'not_found' },
 		  success: function(msg) {
 			console.log( msg );
@@ -195,7 +195,7 @@ function callback(StreetViewPanoramaData, StreetViewStatus) {
 	}
 
 	//redirect (reload)
-	window.location = FULLURL.'/data/extract_date.php';
+	window.location = '<?php echo FULLURL ?>/data/extract_date.php';
 
 }
 
