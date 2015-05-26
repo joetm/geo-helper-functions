@@ -21,3 +21,6 @@ Find and display duplicates. Allow merging of wordpress posts by drag and drop.
 extract_date.php:
 Get the date of a Street View picture. This file will run for as long as there are unprocessed pictures in the database.
 Implemented as a redirect loop. Output is given in the console.
+
+countries.php:
+List of countries, their center coordinates and map zoom levels.
